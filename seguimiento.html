@@ -55,7 +55,8 @@ function readdata(x,y) {
 
             for(i=0;i<5;i++)
             {
-               var data = excel_sheet.Cells(i,2).Value;
+               var data1 = excel_sheet.Cells(i,2).Value;
+               var data = String.fromCharCode(data1);
                console.log(data);
             }
 
@@ -67,3 +68,4 @@ function readdata(x,y) {
     }
 
 </script>
+
