@@ -178,7 +178,7 @@ function generar_tabla(){
 
 	for (var k=1;k<criteros.length;k++){
 		var h2= document.createElement("p");
-		h2.innerHTML=criteros[k];
+		h2.innerHTML=criteros[k]+"(minimo,medio y maximo)";
 		divCriterio.appendChild(h2);
 		var min = document.createElement("input");
 		min.type="number";
@@ -199,6 +199,7 @@ function generar_tabla(){
 
 	var boton_1 = document.createElement("button");
 	boton_1.id="boton_1";
+	boton_1.innerHTML="Generar CBB"
 
 	body.appendChild(br);
 	body.appendChild(boton_1);
