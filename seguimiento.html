@@ -237,7 +237,7 @@ function CBB(){
 	var con =0;
 
 	for (var i = 1; i <criterios.length; i++) {
-		if(document.createElement("min"+i).value!=="0"&&document.createElement("med"+i).value!=="0"&&document.createElement("mas"+i).value!=="0"){
+		if(document.createElement("min"+i).value!==0 &&document.createElement("med"+i).value!==0 &&document.createElement("mas"+i).value!== 0 ){
 			con++;
 		}
 		
@@ -252,13 +252,6 @@ function CBB(){
 		alert("campos no rellenos bribon");
 	}
 	body.appendChild(codigoBB);
-
-
-
-	
-
-
-
 
 }
 
