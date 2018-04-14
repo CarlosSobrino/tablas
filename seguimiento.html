@@ -8,7 +8,7 @@
 	<h1 class="titulo">Seguimiento</h1>
 	</div>
 	<div class="botones">
-		<button class="btn" onclick="generar_tabla()" >Generar tabla</button>
+		<button class="btn"  id="Gtabla" onclick="generar_tabla()" >Generar tabla</button>
 		<button class="btn" onclick="location.href='index.html'" >atras</button>
 	</div>
 	<br>
@@ -64,8 +64,9 @@ function generar_tabla(){
 	var body = document.getElementsByTagName("body")[0];
 	var players= ["-Frenchise-", "Alejomj", "alexa-la-guerrera", "alextorre","anzoO", "Ashitaka89", "BigHeart", "BlackBirds", "Blasphemia.", "blath", "Capitan nox", "carreti", "Centauro2000", "chemamecha", "Code", "Doctor SkizofrenicO", "drenthe1234", "GuArEn CoN DiStEmPeR.", "Jon Nieve SPA", "Jordi104-Infernal", "juliteitor", "kataclys", "keinshiro", "kontranikko", "lobos de mar", "malaguista", "MiHipoCrecia", "mirutxiland", "moriloco", "noisyboypran", "parra", "PePKaRJuS", "PIPO1", "Pitufo Hacker", "pokopelo...", "romanos15", "siul21", "speero as", "Thor40", "Thormento"];
 	criteros=[];
+	criteros[0]="players";
 	var i=0;
-	var c=0;
+	var c=1;
 	for(i=0;i<5;i++){
 		var id="criterio"+i;
 		var criterio=document.getElementById(id).value;
@@ -75,20 +76,54 @@ function generar_tabla(){
 		}
 	}
 	 var p = document.createElement("p");
+	 var botonGT=document.getElementById("Gtabla");
 
-	 p.innerHTML=criteros.toString();
 
-	 body.appendChild(p);
-	 eliminarCajaResumen();
+	 // Crea un elemento <table> y un elemento <tbody>
+		  var tabla   = document.createElement("table");
+		  var tblBody = document.createElement("tbody");
+		  var contador = 0;
+		  // Crea las celdas
+		  for (var i = 0; i < players.length+1; i++) {
+		    // Crea las hileras de la tabla
+		    var hilera = document.createElement("tr");
+		 
+		    for (var j = 0; j < criteros.length; j++) {
+		      // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+		      // texto sea el contenido de <td>, ubica el elemento <td> al final
+		      // de la hilera de la tabla
+		      var celda = document.createElement("td");
+		      if(i==0){
+		      	celda.id="c"+j;
+		      	celda.innerHTML=criteros[j];
+		      	hilera.appendChild(celda);
+
+		      }else{
+		      	if(j==0){
+		      		celda.id="player"+i;
+		      		celda.innerHTML=player[i];
+		      		hilera.appendChild(celda);
+		      	}else{
+
+			      var textoCelda = document.createElement("input");
+			      var ids= "textocelda"+contador;
+			      textoCelda.id=ids;
+			      celda.appendChild(textoCelda);
+			      hilera.appendChild(celda);
+			      contador++;
+		    	}
+			}
+		}
+		 tblBody.appendChild(hilera);
+	}
+	tabla.appendChild(tblBody);
+	var br=document.createElement("br");
+
+	body.appendChild(br);
+	body.appendChild(tabla);
+
 
 }
 
-
-
-function eliminarCajaResumen(){
-    //Si existe la caja o el div...
-    var div = document.getElementById('criterios');
-  	div..innerHTML='';
-}
 
 </script>
