@@ -21,7 +21,9 @@
 		<input type="text" id="criterio2">
 		<input type="text" id="criterio3">
 		<input type="text" id="criterio4">
-	</div>	
+	</div>
+	<br>
+	<br>	
 	
 </body>
 <style type="text/css">
@@ -57,7 +59,11 @@
 		background: black;
     	color: antiquewhite;
 	}
+	.tablagenerada{
+		
+	}
 </style>
+
 <script type="text/javascript">
 
 function generar_tabla(){
@@ -81,6 +87,7 @@ function generar_tabla(){
 
 	 // Crea un elemento <table> y un elemento <tbody>
 		  var tabla   = document.createElement("table");
+		  tabla.class="tablagenerada";
 		  var tblBody = document.createElement("tbody");
 		  var contador = 0;
 		  // Crea las celdas
@@ -101,7 +108,7 @@ function generar_tabla(){
 		      }else{
 		      	if(j==0){
 		      		celda.id="player"+i;
-		      		celda.innerHTML=players[i];
+		      		celda.innerHTML=players[i-1];
 		      		hilera.appendChild(celda);
 		      	}else{
 
@@ -121,6 +128,16 @@ function generar_tabla(){
 
 	body.appendChild(br);
 	body.appendChild(tabla);
+
+	var div = document.getElementById('criterios');
+    if(div !== null){
+        while (div.hasChildNodes()){
+            div.removeChild(div.lastChild);
+        }
+    }else{
+        alert ("No existe la caja previamente creada.");
+    }
+}
 
 
 }
