@@ -111,13 +111,16 @@ function generar_tabla(){
 		      // Crea un elemento <td> y un nodo de texto, haz que el nodo de
 		      // texto sea el contenido de <td>, ubica el elemento <td> al final
 		      // de la hilera de la tabla
-		      var celda = document.createElement("td");
+		      
 		      if(i==0){
+		      	var celda = document.createElement("th");
+		      	var
 		      	celda.id="c"+j;
 		      	celda.innerHTML=criteros[j];
 		      	hilera.appendChild(celda);
 
 		      }else{
+		      	var celda = document.createElement("td");
 		      	if(j==0){
 		      		celda.id="player"+i;
 		      		celda.innerHTML=players[i-1];
