@@ -154,7 +154,7 @@ function generar_tabla(){
 			      var textoCelda = document.createElement("input");
 			      var ids= "textocelda"+contador;
 			      textoCelda.id=ids;
-			      textoCelda.value="0";
+			      textoCelda.value= 0;
 			      textoCelda.type="number";
 			      celda.appendChild(textoCelda);
 			      hilera.appendChild(celda);
@@ -184,17 +184,17 @@ function generar_tabla(){
 		divCriterio.appendChild(h2);
 		var min = document.createElement("input");
 		min.type="number";
-		min.value="0";
+		min.value=0;
 		divCriterio.appendChild(min);
 		min.id="min"+k;
 		var med = document.createElement("input");
 		med.type="number";
-		med.value="0";
+		med.value=0;
 		divCriterio.appendChild(med);
 		med.id="med"+k;
 		var mas = document.createElement("input");
 		mas.type="number";
-		mas.value="0";
+		mas.value=0;
 		divCriterio.appendChild(mas);
 		mas.id="mas"+k;
 
