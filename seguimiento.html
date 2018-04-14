@@ -13,7 +13,7 @@
 	</div>
 	<br>
 	<br>
-	<div class="criterios">
+	<div class="criteriosRen">
 		<h2>CRITERIOS</h2>
 		<br>
 		<input type="text" id="criterio0">
@@ -209,14 +209,37 @@ function generar_tabla(){
 
 	body.appendChild(br);
 	body.appendChild(boton_1);
+	document.getElementById("criteriosRen").style.display="none";
 
 
   
 }
 function CBB(){
+	var body = document.getElementsByTagName("body")[0];
+	var codigoBB = document.createElement("div");
+	var con =0;
+	for (var i = 1; i <criterios.length; i++) {
+		if(document.createElement("min"+i).value!==""&&document.createElement("med"+i).value!==""&&document.createElement("mas"+i).value!==""){
+			con++;
+		}
+		
+	}
+	if(con==criterios.length-1){
+		codigoBB.innerHTML=="Parece que va";
+
+	}else{
+		alert("campos no rellenos bribon");
+	}
+	body.appendChild(codigoBB);
+
+
+
 	document.getElementById("Mym").style.display="none";
 	//document.getElementById("criterios").style.display="none";
 	document.getElementById("Tcri").style.display="none";
+
+
+
 
 }
 
