@@ -130,13 +130,8 @@ function generar_tabla(){
 	body.appendChild(tabla);
 
 	var div = document.getElementById('criterios');
-    if(div !== null){
-        while (div.hasChildNodes()){
-            div.removeChild(div.lastChild);
-        }
-    }else{
-        alert ("No existe la caja previamente creada.");
-    }
+	div.innerHTML='';
+  
 }
 
 
