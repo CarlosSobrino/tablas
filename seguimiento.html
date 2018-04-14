@@ -60,4 +60,39 @@
 </style>
 <script type="text/javascript">
 
+function generar_tabla{
+	var body = document.getElementsByTagName("body")[0];
+	var players= ["-Frenchise-", "Alejomj", "alexa-la-guerrera", "alextorre","anzoO", "Ashitaka89", "BigHeart", "BlackBirds", "Blasphemia.", "blath", "Capitan nox", "carreti", "Centauro2000", "chemamecha", "Code", "Doctor SkizofrenicO", "drenthe1234", "GuArEn CoN DiStEmPeR.", "Jon Nieve SPA", "Jordi104-Infernal", "juliteitor", "kataclys", "keinshiro", "kontranikko", "lobos de mar", "malaguista", "MiHipoCrecia", "mirutxiland", "moriloco", "noisyboypran", "parra", "PePKaRJuS", "PIPO1", "Pitufo Hacker", "pokopelo...", "romanos15", "siul21", "speero as", "Thor40", "Thormento"];
+	criteros=new Array();
+	var i=0;
+	var c=0;
+	for(i=0;i<0;i++){
+		var criterio=document.getElementById(i);
+		if(criterio !==""){
+				criteros[c]=criterio;
+				c++;	
+		}
+	}
+	 var p = document.createElement("p");
+
+	 p.innerHTML=criteros.toString();
+
+	 body.appendChild(p);
+
+}
+
+
+
+function eliminarCajaResumen(){
+    //Si existe la caja o el div...
+    var div = document.getElementById('criterios');
+    if(div !== null){
+        while (div.hasChildNodes()){
+            div.removeChild(div.lastChild);
+        }
+    }else{
+        alert ("No existe la caja previamente creada.");
+    }
+}
+
 </script>
