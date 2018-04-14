@@ -237,7 +237,7 @@ function CBB(){
 	var con =0;
 
 	for (var i = 1; i <criterios.length; i++) {
-		if(document.createElement("min"+i).value!==0 &&document.createElement("med"+i).value!==0 &&document.createElement("mas"+i).value!== 0 ){
+		if(document.createElement("min"+i).innerHTML!=="0" &&document.createElement("med"+i).innerHTML!=="0" &&document.createElement("mas"+i).innerHTML!== "0" ){
 			con++;
 		}
 		
