@@ -124,6 +124,7 @@ function generar_tabla(){
 
 	 // Crea un elemento <table> y un elemento <tbody>
 		  var tabla   = document.createElement("table");
+		  tabla.id= "Tcri";
 		  var tblBody = document.createElement("tbody");
 		  var contador = 0;
 		  // Crea las celdas
@@ -199,13 +200,24 @@ function generar_tabla(){
 
 	var boton_1 = document.createElement("button");
 	boton_1.id="boton_1";
-	boton_1.innerHTML="Generar CBB"
+	boton_1.innerHTML="Generar CBB";
+	if (boton.addEventListener) {
+    			boton.addEventListener('click', CBB, false);
+	} else {
+   				boton.attachEvent('onclick', CBB);
+	}
 
 	body.appendChild(br);
 	body.appendChild(boton_1);
 
 
   
+}
+function CBB(){
+	document.getElementById("Mym").style.display="none";
+	document.getElementById("criterio").style.display="none";
+	document.getElementById("Tcri");
+
 }
 
 
