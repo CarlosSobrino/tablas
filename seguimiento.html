@@ -64,7 +64,7 @@
 	}
 	table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
 	}
 
 	th, td {
@@ -77,6 +77,9 @@
 	th {
 	    background-color: #4CAF50;
 	    color: white;
+	}
+	.Mym{
+		column-count: 4;
 	}
 </style>
 
@@ -143,8 +146,34 @@ function generar_tabla(){
 	tabla.appendChild(tblBody);
 	var br=document.createElement("br");
 
+	//BOTON GENERAR BB
+	var botonGenBB = document.createElement("button");
+	botonGenBB.id="btngenBB";
+
 	body.appendChild(br);
 	body.appendChild(tabla);
+	botonGT.disabled=true;
+
+	var divCriterio=document.createElement("div");
+	div.id="Mym";
+
+	for (var k=1;k<criteros.length;k++){
+		var h2= document.createElement("h2");
+		h2.innerHTML=criteros[k];
+		divCriterio.appendChild(h2);
+		var min = document.createElement("input");
+		divCriterio.appendChild(min);
+		min.id="min"+k;
+		var med = document.createElement("input");
+		divCriterio.appendChild(med);
+		med.id="med"+k;
+		var mas = document.createElement("input");
+		divCriterio.appendChild(mas);
+		mas.id="mas"+k;
+
+	}
+	body.appendChild(br);
+	body.appendChild(divCriterio);
 
   
 }
