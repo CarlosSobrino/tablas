@@ -266,13 +266,13 @@ function CBB(){
 		  				textTabla+="[**]"+criterios[cont];
 		  				cont++;
 		  			}else{
-		  				textTabla+="[||]"+textarray[cont];
+		  				textTabla+="[||]"+criterios[cont];
 		  				cont++;
 		  			}
 
 		  		}else{
 		  			if(j==0){
-		  				textTabla+="[*][player]"+textarray[contplayer]+"[player]";
+		  				textTabla+="[*][player]"+players[contplayer]+"[player]";
 		  				contplayer++;
 		  			}else{
 		  				textTabla+="[|]"+textarray[contceldas];
@@ -294,7 +294,7 @@ function CBB(){
 		body.appendChild(br);
 		codigoBB.appendChild(cuerpo);
 		body.appendChild(codigoBB);
-		btnOK.disabled=true;
+
 
 
 
