@@ -16,11 +16,11 @@
 	<div class="criterios">
 		<h2>CRITERIOS</h2>
 		<br>
-		<input type="text" id="1">
-		<input type="text" id="2">
-		<input type="text" id="3">
-		<input type="text" id="4">
-		<input type="text" id="5">
+		<input type="text" id="criterio0">
+		<input type="text" id="criterio1">
+		<input type="text" id="criterio2">
+		<input type="text" id="criterio3">
+		<input type="text" id="criterio4">
 	</div>	
 	
 </body>
@@ -63,11 +63,12 @@
 function generar_tabla(){
 	var body = document.getElementsByTagName("body")[0];
 	var players= ["-Frenchise-", "Alejomj", "alexa-la-guerrera", "alextorre","anzoO", "Ashitaka89", "BigHeart", "BlackBirds", "Blasphemia.", "blath", "Capitan nox", "carreti", "Centauro2000", "chemamecha", "Code", "Doctor SkizofrenicO", "drenthe1234", "GuArEn CoN DiStEmPeR.", "Jon Nieve SPA", "Jordi104-Infernal", "juliteitor", "kataclys", "keinshiro", "kontranikko", "lobos de mar", "malaguista", "MiHipoCrecia", "mirutxiland", "moriloco", "noisyboypran", "parra", "PePKaRJuS", "PIPO1", "Pitufo Hacker", "pokopelo...", "romanos15", "siul21", "speero as", "Thor40", "Thormento"];
-	criteros=new Array();
+	criteros=[];
 	var i=0;
 	var c=0;
-	for(i=0;i<0;i++){
-		var criterio=document.getElementById(i);
+	for(i=0;i<5;i++){
+		var id="criterio"+i;
+		var criterio=document.getElementById(id);
 		if(criterio !==""){
 				criteros[c]=criterio;
 				c++;	
