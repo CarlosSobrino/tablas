@@ -231,26 +231,83 @@ function CBB(){
 				c++;	
 		}
 	}
+	var players= ["-Frenchise-", "Alejomj", "alexa-la-guerrera", "alextorre","anzoO", "Ashitaka89", "BigHeart", "BlackBirds", "Blasphemia.", "blath", "Capitan nox", "carreti", "Centauro2000", "chemamecha", "Code", "Doctor SkizofrenicO", "drenthe1234", "GuArEn CoN DiStEmPeR.", "Jon Nieve SPA", "Jordi104-Infernal", "juliteitor", "kataclys", "keinshiro", "kontranikko", "lobos de mar", "malaguista", "MiHipoCrecia", "mirutxiland", "moriloco", "noisyboypran", "parra", "PePKaRJuS", "PIPO1", "Pitufo Hacker", "pokopelo...", "romanos15", "siul21", "speero as", "Thor40", "Thormento"];
+
 
 	var body = document.getElementsByTagName("body")[0];
 	var codigoBB = document.createElement("div");
 	var con =0;
 
-	for (var i = 1; i <criterios.length; i++) {
-		if(document.createElement("min"+i).innerHTML!=="0" &&document.createElement("med"+i).innerHTML!=="0" &&document.createElement("mas"+i).innerHTML!== "0" ){
-			con++;
-		}
+//valor de las celdas
+		var textarray=[];
 		
-	}
-	if(con==criterios.length-1){
+		for (i=0; i<player.length*(criterios.length-1); i++){
+			//text =+ document.getElementById("textocelda"+i).value;
+			textarray[i]=document.getElementById("textocelda"+i).value;
+		}
+
+
+
+
+
+		
+		 textTabla+="[table]";
+		 textTabla+="<br>";
+		 var cuerpo = document.createElement("div");
+		 var cont=0;
+		 var contplayer=0;
+		 var contceldas=0;
+		 for (var i = 0; i < players.length+1; i++) {
+	
+		    for (var j = 0; j < criterios.length; j++) {
+		  		
+		  		if(i==0){
+		  			if(j==0){
+		  				textTabla+="[**]"+criterios[cont];
+		  				cont++;
+		  			}else{
+		  				textTabla+="[||]"+textarray[cont];
+		  				cont++;
+		  			}
+
+		  		}else{
+		  			if(j==0){
+		  				textTabla+="[*][player]"+textarray[contplayer]+"[player]";
+		  				contplayer++;
+		  			}else{
+		  				textTabla+="[|]"+textarray[contceldas];
+		  				contceldas++;
+		  			}
+		  		}
+		  		
+
+		    }
+		   
+		    if(i==0){
+		    	textTabla+="[/**]";
+		    }
+		    textTabla+="<br>";
+		}
+		textTabla+="\n[/table]";
+		cuerpo.innerHTML=textTabla;
+		var br=document.createElement("br");
+		body.appendChild(br);
+		div.appendChild(cuerpo);
+		body.appendChild(div);
+		btnOK.disabled=true;
+
+
+
+
+
+
+	
 		codigoBB.innerHTML=="Parece que va";
 		document.getElementById("Mym").style.display="none";
 		//document.getElementById("criterios").style.display="none";
 		document.getElementById("Tcri").style.display="none";
 
-	}else{
-		alert("campos no rellenos bribon");
-	}
+
 	body.appendChild(codigoBB);
 
 }
