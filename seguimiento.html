@@ -81,6 +81,24 @@
 	.Mym{
 		column-count: 4;
 	}
+	.boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 15px;
+    border: 3px double #006505;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
 </style>
 
 <script type="text/javascript">
@@ -159,7 +177,7 @@ function generar_tabla(){
 	divCriterio.id="Mym";
 
 	for (var k=1;k<criteros.length;k++){
-		var h2= document.createElement("h2");
+		var h2= document.createElement("p");
 		h2.innerHTML=criteros[k];
 		divCriterio.appendChild(h2);
 		var min = document.createElement("input");
@@ -178,6 +196,13 @@ function generar_tabla(){
 	}
 	body.appendChild(br);
 	body.appendChild(divCriterio);
+
+	var boton_1 = document.createElement("button");
+	boton_1.id="boton_1";
+
+	body.appendChild(br);
+	body.appendChild(boton_1);
+
 
   
 }
