@@ -215,6 +215,18 @@ function generar_tabla(){
   
 }
 function CBB(){
+	var criteros=[];
+	criteros[0]="Players";
+	var i=0;
+	var c=1;
+	for(i=0;i<5;i++){
+		var id="criterio"+i;
+		var criterio=document.getElementById(id).value;
+		if(criterio !==""){
+				criteros[c]=criterio;
+				c++;	
+		}
+	}
 	var body = document.getElementsByTagName("body")[0];
 	var codigoBB = document.createElement("div");
 	var con =0;
