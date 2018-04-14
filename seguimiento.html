@@ -215,21 +215,23 @@ function generar_tabla(){
   
 }
 function CBB(){
-	var criteros=[];
-	criteros[0]="Players";
+	var criterios=[];
+	criteiros[0]="Players";
 	var i=0;
 	var c=1;
 	for(i=0;i<5;i++){
 		var id="criterio"+i;
 		var criterio=document.getElementById(id).value;
 		if(criterio !==""){
-				criteros[c]=criterio;
+				criterios[c]=criterio;
 				c++;	
 		}
 	}
+	
 	var body = document.getElementsByTagName("body")[0];
 	var codigoBB = document.createElement("div");
 	var con =0;
+
 	for (var i = 1; i <criterios.length; i++) {
 		if(document.createElement("min"+i).value!==""&&document.createElement("med"+i).value!==""&&document.createElement("mas"+i).value!==""){
 			con++;
