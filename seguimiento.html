@@ -327,7 +327,7 @@ function calcular_puntos(valorescalcular){
 		var min=document.getElementById("min"+i).value;
 		var med=document.getElementById("med"+i).value;
 		var mas=document.getElementById("mas"+i).value;
-		console.log(""+min+" "+med+" "+mas);
+		console.log(""+parseInt(min)+" "+parseInt(med)+" "+parseInt(mas));
 		if(min<valorescalcular[i-1]<med){
 			Puntos+=1;
 		}else if(med<valorescalcular[i-1]<mas){
