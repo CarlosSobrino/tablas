@@ -309,7 +309,20 @@ function CBB(){
 		var boton11 = document.getElementById("boton_1");
 		boton11.disabled=true;
 
+		var TextCriterios="<br><br>[spoiler=Criterrios]";
+		TextCriterios+="<br>";
+		TextCriterios+="Estos son los criterios con los cual hemos evaludo los puentos y la puntuacion total es, "+criterios.length*3+"Los criterios son los siguientes";
 
+		for(var k=1;k<criterios.length;k++){
+			TextCriterios+=criterios[k]": La puntuacion es la siguientes entre"+document.getElementById("min"+i).value+" y " +document.getElementById("med"+i).value+" un total de [b]1 Punto[/b], Entre "+document.getElementById("med"+i).value+" y "+document.getElementById("mas"+i).value+"un total de [b]2 Punto[/b], y por ultimo si es mayor a "+document.getElementById("mas"+i).value;
+
+			TextCriterios+="<br>";
+		}
+		TextCriterios="[/spoiler]";
+
+		var divinfor = document.createElement("div");
+		divinfor.innerHTML=TextCriterios;
+		body.appendChild(divinfor);
 
 
 
